@@ -1,6 +1,9 @@
 function read_operand(tokenArray) {
-    
-    var operand = parseInt( tokenArray.shift() );
+    var operand = tokenArray.shift();
+    if (operand == '(') {
+        operand = evaluate(tokenArray)
+    }
+    operand = parseInt(operand)
     if (isNaN(operand)){
         throw 'Number expected';
     }
@@ -15,17 +18,40 @@ function evaluate(tokenArray) {
     var value = read_operand(tokenArray);
     while (tokenArray.length>=1) {
         var operator = tokenArray.shift();
-        var valid_operators = ['+', '-','*','/'];
+        var valid_operators = ['+', '-','*','/',')','('];
         if ($.inArray(operator, valid_operators) == -1){ //jQuery.inArray is used to check if the operator is valid. If perator is not in the array valid_operators, inArray returns -1.
-            
+            throw 'Invalid operator';
+        }
+        if (operator == ')') {
+            return value;
+        }
+        var tempOperand = read_operand(tokenArray);
+        //The following section is porbably not the best way to do this- it seems repetitive. I should replace this at some point.
+        if (operator == "+") {
+            value =  value + tempOperand;
+        }
+        if (operator == "-") {
+            value =  value - tempOperand;
+        }
+        if (operator == "*") {
+            value =  value * tempOperand;
+        }
+        if (operator == "/") {
+            value = value / tempOperand;
         }
     }
-}
-    
+    return value
+}    
 function calculate(text) {
     var pattern = /\d+|\+|\-|\*|\/|\(|\)/g;
     var tokens = text.match(pattern);
-    return JSON.stringify(tokens);
+    var value = evaluate(tokens);
+    if (tokens.length>0){
+        throw 'Ill formed expression';
+    }
+    else {
+        return value;
+    }
 }
 function setup_calc(div) {
     var input =$('<input></input>', {type: "text", size:50});
