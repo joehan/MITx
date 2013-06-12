@@ -1,17 +1,15 @@
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <link href="Calculator.css" rel="stylesheet">
-</script>
+<script src= Calculator.js></script>
 </head>
 <body>
 <div class = calculator>
 <div class = background>
     <div class = screen>
-        <div class="entry">
-            <input type="text" size=50>       
-            </input>
-        </div>
-        <div class="output">
+        <div id = 'output' class="output">
+        122+255
         </div>
     </div> 
     <div class="row" id="row1">
@@ -23,35 +21,35 @@
     <div class="row" id="row2">
         <button class="smallbutton">C</button>
         <button class="smallbutton">&#177;</button>
-        <button class="smallbutton">&divide;</button>
-        <button class="smallbutton">&#215;</button>
+        <button class="smallbutton numbutton" >&divide;</button>
+        <button class="smallbutton numbutton" >&#215;</button>
         </class>
         </class>
 
     </div>
     <div class="row" id="row3">
-        <button class="smallbutton">7</button>
-        <button class="smallbutton">8</button>
-        <button class="smallbutton">9</button>
-        <button class="smallbutton">&#8722;</button>
+        <button class="smallbutton numbutton" >7</button>
+        <button class="smallbutton numbutton" >8</button>
+        <button class="smallbutton numbutton" >9</button>
+        <button class="smallbutton numbutton" >&#8722;</button>
     </div>
     <div class="row" id="row4">
-        <button class="smallbutton">4</button>
-        <button class="smallbutton">5</button>
-        <button class="smallbutton">6</button>
-        <button class="smallbutton">+</button>
+        <button class="smallbutton numbutton" >4</button>
+        <button class="smallbutton numbutton" >5</button>
+        <button class="smallbutton numbutton" >6</button>
+        <button class="smallbutton numbutton" >+</button>
     </div>
     <div class="row" id="row5">
         <class="offset">
-        <button class="smallbutton">1</button>
-        <button class="smallbutton">2</button>
-        <button class="smallbutton">3</button>
+        <button class="smallbutton numbutton" >1</button>
+        <button class="smallbutton numbutton" >2</button>
+        <button class="smallbutton numbutton" >3</button>
         </class>
-        <button class="tallbutton"><h>=</h></button>
+        <button id='equals' class="tallbutton"><h>=</h></button>
     </div>
     <div class="row" id="row6">
-        <button class="widebutton">0</button>
-        <button class="smallbutton">.</button>
+        <button class="widebutton" "numbutton" >0</button>
+        <button class="smallbutton" >.</button>
     </div>
     <div class="row" id="row4"></div>
     <div class="row" id="row5"></div>

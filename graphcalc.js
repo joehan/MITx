@@ -25,11 +25,14 @@ function setup_calc(div) {
         var ctx = DOMcanvas.getContext('2d');
         
         var offset= 0;
+        ctx.lineWidth=2;
         ctx.beginPath();
+        ctx.strokeStyle='black'
         ctx.moveTo(coords[0][0],coords[0][1]);
         for (var i=1;i<coords.length;i++){
-             ctx.lineTo(i[0],i[1]);  
+             ctx.lineTo([coords][i][0],[coords][i][1]);  
         }
+        ctx.stroke()
     }
     var plot=function(){
         var equation = func_textbox.val();
@@ -50,17 +53,9 @@ $(document).ready(function(){
     });
     $('head').append('<link href="graphcalc.css" rel = "stylesheet"/>')
 });    
-    });
-    $('head').append('<link href="graphcalc.css" rel = "stylesheet"/>')
-});    
- 
- 
- 
-<<<<<<<<< saved version
-function generate_points(f_x, min_x, max_x,step )
-=========
 
->>>>>>>>> local version{
+function generate_points(f_x, min_x, max_x,step ){
+
     var coords = []
     try{
     var tree = calculator.parse(f_x);
@@ -70,7 +65,7 @@ function generate_points(f_x, min_x, max_x,step )
     }
     }
     catch(e){
-        console.log('Error in expression')
+        console.log('Error in expression');
     }
     return coords;
 }

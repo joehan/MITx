@@ -9,7 +9,8 @@ background-image: -webkit-linear-gradient(top, #DDDDDD 0%, #AFAFAF 100%);
     height:521px;
     position: absolute;
 }
-.calculator input[type=text]{
+
+.calculator .output{
     background-color:#F0FBC8;
     border:none;
     font-size:28;

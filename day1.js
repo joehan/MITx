@@ -53,18 +53,21 @@ function calculate(text) {
         return value;
     }
 }
-function setup_calc(div) {
-    var input =$('<input></input>', {type: "text", size:50});
-    var output = $('<div></div>');
-    var button = $('<button>Calculate</button>');
-    button.bind("click", function() {
-        output.text(calculate(input.val()));
-    });
-    $(div).append(input,button,output);
-}
 
-$(document).ready(function(){
-    $('.calculator').each(function() {
-        setup_calc(this);
-    });
+
+
+// function setup_calc(div) {
+//     var input =$('<input></input>', {type: "text", size:50});
+//     var output = $('<div></div>');
+//     var button = $('<button>Calculate</button>');
+//     button.bind("click", function() {
+//         output.text(calculate(input.val()));
+//     });
+//     $(div).append(input,button,output);
+// }
+
+// $(document).ready(function(){
+//     $('.calculator').each(function() {
+//         setup_calc(this);
+//     });
 });
