@@ -4,10 +4,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="fancycalc.js"></script> 
     <script src= 'graphcalc.js'></script>
-    
+    <link href= 'graphcalc.css' rel='stylesheet'>
     
 </head>
 <body>
-<div class="graphcalc"></div>    
+    <div class="graphcalc">
+        <canvas id="graphWindow"></canvas>
+        <div id="inputs"> 
+            F(x):  <input id="fxnInput" type="text"></input><br>
+            minX: <input id="minX" type="text" size="10"></input><br>
+        
+            maxX: <input id="maxX" type="text" size="10"></input><br>
+            <button id="plotbutton">Plot</button>
+        </div>
+    </div>    
 </body>
 </html>

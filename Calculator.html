@@ -3,13 +3,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <link href="Calculator.css" rel="stylesheet">
 <script src= Calculator.js></script>
+<script src = 'graphcalc.js'></script>
 </head>
 <body>
+<div class= 'graphcalc'></div>
 <div class = calculator>
 <div class = background>
     <div class = screen>
         <div id = 'output' class="output">
-        122+255
+        
         </div>
     </div> 
     <div class="row" id="row1">
@@ -19,7 +21,7 @@
         <button class="smallbutton">MR</button>
     </div>
     <div class="row" id="row2">
-        <button class="smallbutton">C</button>
+        <button class="smallbutton clearbutton">C</button>
         <button class="smallbutton">&#177;</button>
         <button class="smallbutton numbutton" >&divide;</button>
         <button class="smallbutton numbutton" >&#215;</button>
@@ -45,11 +47,12 @@
         <button class="smallbutton numbutton" >2</button>
         <button class="smallbutton numbutton" >3</button>
         </class>
-        <button id='equals' class="tallbutton"><h>=</h></button>
+        <button id='equals' class="smallbutton"><h>=</h></button>
     </div>
     <div class="row" id="row6">
-        <button class="widebutton" "numbutton" >0</button>
+        <button class="widebutton numbutton" >0</button>
         <button class="smallbutton" >.</button>
+        <button class="smallbutton numbutton">x</button>
     </div>
     <div class="row" id="row4"></div>
     <div class="row" id="row5"></div>

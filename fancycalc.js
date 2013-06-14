@@ -191,6 +191,15 @@ var calculator = (function() {
     exports.calculate = calculate;
 
     function setup_calc(div) {
+        $(document).ready(function(){
+            $('.numbutton').bind("click", function(event){
+                $('#output').text()+=$(event.target).text()
+        });
+            $('#equals').bind("click", function(){
+                expression=(String(calculate($('.output').val())));
+            $('#output').text(expression)
+        }); 
+    });
         var input = $('<input></input>', {
             type: 'text',
             size: 50

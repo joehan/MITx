@@ -1,72 +1,104 @@
-function setup_calc(div) {
-    var background = $("<div class='background'></div>");
-    var graph_window = $("<canvas class='graph_window'></canvas>");
-    var func_textbox = $("<input id='func' width='30' />");
-    var min_textbox = $("<input id='min' width='15' />");
-    var max_textbox = $("<input id='max' width='15' />");
-    var plot_button = $("<button id='plot_button'></button> ");
-    
-    $(div).append(background);
-    background.append(graph_window)
-        .append($("<div id='line1'></div>"))
-        .append($("<div id = 'line2'></div>"))
-        .append($("<div id = 'line3'></div>"));
-    $('#line1').append('f(x)')
-        .append(func_textbox);
-    $('#line2').append('min x')
-        .append(min_textbox) 
-        .append('max x')
-        .append(max_textbox);
-    $('#line3').append(plot_button);
-    
-    var graph_coords=function(coords){
-        var JQcanvas = graph_window;
+var graphcalc = (function () {
+    var exports = {};  // functions,vars accessible from outside
+   
+    function graph(canvas,expression,x1,x2) {
+        // … your code to plot the value of expression as x varies from x1 to x2 …
+        var JQcanvas = canvas;
         var DOMcanvas = JQcanvas[0];
         var ctx = DOMcanvas.getContext('2d');
         
-        var offset= 0;
-        ctx.lineWidth=2;
-        ctx.beginPath();
-        ctx.strokeStyle='black'
-        ctx.moveTo(coords[0][0],coords[0][1]);
-        for (var i=1;i<coords.length;i++){
-             ctx.lineTo([coords][i][0],[coords][i][1]);  
+        DOMcanvas.width = 350;
+        DOMcanvas.height = 200;
+        // resets the graph when entering in a new function
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0,0,DOMcanvas.width,DOMcanvas.height);;
+        
+        // calculates the points for the graph 
+        try {
+            var tree = calculator.parse(x1);
+            var value = calculator.evaluate(tree, {e: Math.E, pi: Math.PI});
+            var tree2 = calculator.parse(x2);
+            var value2 = calculator.evaluate(tree2, {e: Math.E, pi: Math.PI});
+            
+            var parsedExp = calculator.parse(expression);
+            var x = [];
+            var y = [];
+            var xscale; var yscale; 
+            xscale = DOMcanvas.width/(parseFloat(x2) - parseFloat(x1));
+            var ymin = 0;
+            var ymax = 0;
+            var v = value;
+            while(v < value2) { 
+                var yvalue = parseFloat(calculator.evaluate(parsedExp, {e: Math.E, pi: Math.PI, x: v}));
+                x.push(v);
+                if (yvalue < ymin) {
+                    ymin = yvalue;
+                }
+                else if (yvalue > ymax) {
+                    ymax = yvalue;
+                }
+                y.push(yvalue);
+                v += (value2 - value)/100;
+            }
+        } catch(e) {
+            throw_error(String(e), ctx);
+            return;
         }
-        ctx.stroke()
-    }
-    var plot=function(){
-        var equation = func_textbox.val();
-        var min = parseInt(min_textbox.val());
-        var max = parseInt(max_textbox.val());
-        var points = generate_points(equation, min, max, .1);
-        graph_coords(points)
+        yscale = (DOMcanvas.height-20)/(ymax-ymin);
         
-    };
-    plot_button.bind('click', plot);
-}
-
-
-
-$(document).ready(function(){
-    $.each($('.graphcalc'), function(idx, elem) {
-        setup_calc($(elem));
+        
+        
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 5;
+        ctx.moveTo(x[0]*xscale - parseFloat(x1)*xscale,ymax*yscale-y[0]*yscale +10);
+        for (var c=1; c < x.length; c++) {
+            ctx.lineTo(x[c]*xscale- parseFloat(x1)*xscale,ymax*yscale-y[c]*yscale +10);
+        }
+        ctx.stroke();
+        
+        
+        
+    }
+    
+    function throw_error(e, ctx) {
+        ctx.font = "15px Georgia";
+        ctx.textAlign = "center"; // left, right
+        ctx.textBaseline = "middle"; // top, bottom, alphabetic
+        ctx.fillStyle = "black";
+        ctx.fillText(e,100,100);
+    }
+    
+    
+   
+    function setup(div) {
+        
+        var canvas = $('#graphWindow');
+        $('#plotbutton').bind('click', function () {
+            
+            var expression = String($('#fxnInput').val());
+            var x1 = String($('#minX').val());
+            var x2 = String($('#maxX').val());
+            
+            graph(canvas, expression, x1, x2);
+            
+            var can = $('canvas');
+            var DOMcan = can[0];
+            
+            var ctx = DOMcan.getContext('2d');
+            //TODO KEEP WORKING ON THIS
+        });
+    }
+    exports.setup = setup;
+   
+    return exports;
+}());
+// setup all the graphcalc divs in the document
+$(document).ready(function() {
+    $('.graphcalc').each(function() {
+        graphcalc.setup(this);  
     });
-    $('head').append('<link href="graphcalc.css" rel = "stylesheet"/>')
-});    
-
-function generate_points(f_x, min_x, max_x,step ){
-
-    var coords = []
-    try{
-    var tree = calculator.parse(f_x);
-    for (x=min_x; x <max_x; x+=step){
-        
-        coords.push([x,calculator.evaluate(tree, {x:x})]);
-    }
-    }
-    catch(e){
-        console.log('Error in expression');
-    }
-    return coords;
-}
-
+});
+                     
+                     
+//Start of not my code                 
+                     

@@ -1,10 +1,24 @@
-.background{
-    background-color:#A5A5A5;
-    width: 100%;
-    height:100%;
+.graphcalc{
+    background-color:#BBF1FB;
+    width: 600px;
+    height:300px;
 }
-.graph_window{
+#graphWindow{
+    position:relative;
+    top:10px;
+    left:-50x;
     width:150px;
     height:150px;
+    margin:20px;
     background-color:#FFFFFF;
+}
+.plot_button{
+    position:relative;
+    left:50px;
+}
+ #inputs{
+    margin-left:10px
+    position:relative;
+    
+    
 }

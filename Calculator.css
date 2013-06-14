@@ -1,13 +1,9 @@
 .calculator .background {
 /* Webkit (Safari/Chrome 10) */ 
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #DDDDDD), color-stop(1, #AFAFAF));
-
-/* Webkit (Chrome 11+) */ 
-background-image: -webkit-linear-gradient(top, #DDDDDD 0%, #AFAFAF 100%);
-    background-color:#ADADAD;
-    width:427px;
-    height:521px;
-    position: absolute;
+    background: linear-gradient(to bottom, #F2F1F3, #BBBBBB);
+    height:530px;
+    width:430px;
+    position:absolute;
 }
 
 .calculator .output{
@@ -18,15 +14,14 @@ background-image: -webkit-linear-gradient(top, #DDDDDD 0%, #AFAFAF 100%);
     width:374px;
     height: 94px;
     left: 24px;
-    top: 8px;
+    top: 12px;
 }
 .calculator .screen{
     width:374px;
     height:94px;
     background-color:#F0FBC8;
     border-radius:10px;
-    border-style:inset;
-    border-width:4px;
+    box-shadow: 5px 5px 5px 5px #AAAAAA inset;
     left: 24px;
     top: 8px;
     position:relative;
@@ -39,13 +34,13 @@ background-image: -webkit-linear-gradient(top, #DDDDDD 0%, #AFAFAF 100%);
     position: relative;
     left: 13px;
     top: 24px;
-    background-color:#D8D5D0;
     border-radius:8px;
-    border:outset;
     font-size:18pt;
     margin: 3px;
+    background-color:#D8D5D0
     font-family: 'Lucida Grande', 'Helvetica';
     color:#2F2F2F;
+    box-shadow:3px 3px 2px 2px #D1D1D1;
 }
 
 
@@ -72,10 +67,10 @@ background-image: -webkit-linear-gradient(top, #DDDDDD 0%, #AFAFAF 100%);
     top: 25px;
     background-color:#D8D5D0;
     border-radius:8px;
-    border:outset;
     font-size:18pt;
-    font-family:'Arial', 'Helvetica';
-    color:#2F2F2F
+    font-family:'Arial', 'Helvetica'
+    color:#2F2F2F;
+    box-shadow:3px 3px 2px 2px #D1D1D1;
 }
 
 .calculator #row2 button {
@@ -96,12 +91,14 @@ background-image: -webkit-linear-gradient(top, #DDDDDD 0%, #AFAFAF 100%);
 }
 .calculator #row5 .smallbutton {
     position: relative;
-    top: 17px;
+    top: 40px;
 }
 
 .calculator #row6 button {
     position: relative;
-    top: -10px;
+    top: 40px;
+    left:15px;
+    
 }
 
 h{
@@ -109,3 +106,27 @@ h{
     top:32;
 }
 
+.graphcalc{
+    background-color:#BBF1FB;
+    width: 600px;
+    height:300px;
+}
+#graphWindow{
+    position:relative;
+    top:10px;
+    left:-50x;
+    width:150px;
+    height:150px;
+    margin:20px;
+    background-color:#FFFFFF;
+}
+.plot_button{
+    position:relative;
+    left:50px;
+}
+ #inputs{
+    margin-left:10px
+    position:relative;
+    
+    
+}
