@@ -1,0 +1,88 @@
+body{
+    background: url('http://beathound.com/img/wood_pattern.png');
+    height:1019px;
+}
+
+#mainbox{
+    position:relative;
+    background-color:#FFFFFF;
+    opacity:0.8;
+    height:87%;
+    max-width:76%;
+    top:92px;
+    text-align:center;
+    border-radius:3px;
+}
+
+#logo{
+    position:relative;
+    width:100px;
+    top:20px;
+}
+#logoText{
+    position:relative;
+    top:20px;
+}
+#hound{
+    color:darkorange;
+    text-shadow: 1px 1px 2px rgba(138, 119, 0, 0.6);
+    font-weight:bold;
+    font-family:'Dosis', 'Helvetica',sans-serif;
+    
+}
+#contentBox{
+    text-align:center;
+}
+#beat{
+    font-weight:100;
+    font-family:'Dosis', sans-serif;
+}
+#splashText{
+    position:relative;
+    text-align:center;
+    font-family:'Dosis', sans-serif;
+    font-weight:lighter;
+    font-size:32px;
+        
+    top:20px;
+    
+}
+
+#uploadNowText{
+    position:relative;
+    top:40px;
+    
+}
+
+#form{
+    position:relative;
+    top:60px;
+    border: 2px solid #e0ddd6;
+    width:466px;
+    height:196px;
+    left:75px;
+}
+
+#getFile{
+    padding:20px;
+}
+
+#emailInput{
+    opacity:0.9;
+}
+
+#analyze{
+    position:relative;
+    background-color: #5dbb5d;
+    
+    border-radius:3px;
+    opacity:1;
+    top:10px;
+    
+    
+    
+}
+#helpText{
+    color:
+    
+}
