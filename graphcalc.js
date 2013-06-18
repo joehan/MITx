@@ -98,7 +98,3 @@ $(document).ready(function() {
         graphcalc.setup(this);  
     });
 });
-                     
-                     
-//Start of not my code                 
-                     

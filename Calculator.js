@@ -13,6 +13,11 @@ $(document).ready(function(){
         expression=calculate(expression)
         $('#output').text(expression)
     });
+    $('.plotbutton').bind("click", function(){
+        expression=graphcalc.graph(expression)
+        $('#output').text(expression)
+    });
+    
 });
 
 function read_operand(tokenArray) {

@@ -4,6 +4,7 @@
     height:530px;
     width:430px;
     position:absolute;
+    float:left;
 }
 
 .calculator .output{
@@ -108,8 +109,9 @@ h{
 
 .graphcalc{
     background-color:#BBF1FB;
-    width: 600px;
-    height:300px;
+     height:530px;
+    width:430px;
+    float:right;
 }
 #graphWindow{
     position:relative;

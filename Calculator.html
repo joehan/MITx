@@ -6,7 +6,16 @@
 <script src = 'graphcalc.js'></script>
 </head>
 <body>
-<div class= 'graphcalc'></div>
+<div>
+<div class= 'graphcalc'>
+    <canvas id="graphWindow"></canvas>
+        <div id="inputs"> 
+            F(x):  <input id="fxnInput" type="text"></input><br>
+            minX: <input id="minX" type="text" size="10"></input><br>
+        
+            maxX: <input id="maxX" type="text" size="10"></input><br>
+            <button id="plotbutton">Plot</button>
+</div>
 <div class = calculator>
 <div class = background>
     <div class = screen>
@@ -15,7 +24,7 @@
         </div>
     </div> 
     <div class="row" id="row1">
-        <button class="smallbutton">MC</button>
+        <button class="smallbutton plotbutton">Plot</button>
         <button class="smallbutton">M+</button>
         <button class="smallbutton">M-</button>
         <button class="smallbutton">MR</button>
@@ -57,6 +66,7 @@
     <div class="row" id="row4"></div>
     <div class="row" id="row5"></div>
     <div class="row" id="row6"></div>
+</div>
 </div>
 </div>
 </body>
