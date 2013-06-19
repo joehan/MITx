@@ -34,5 +34,11 @@ chart.selectAll('.y-scale-label').data(y_scale.ticks(7))
     .attr('dx',-margin.left)
     .attr('dy',0)
     .text(String)
-
+chart.selectAll('.line').data(data)
+    .enter().append('line')
+    .attr('class', 'line')
+    .attr('x1', function(d,i){return d[i])
+    .attr('x2', chart_width)
+    .attr('y1', function(d){return chart_height- y_scale(d)})
+    .attr('y2', function(d){return chart_height- y_scale(d)})
 
