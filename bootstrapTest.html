@@ -6,26 +6,29 @@
 </head>
 
 <body>
-<div class = 'container'>
+<div id='beenHereBefore'>
+    <a href=http://google.com>Been here before?</a>
+</div>
+<div class = 'container-fluid'>
    
     <div class = 'row-fluid'>
     
-        <div id = 'mainbox' class = 'span8 offset2'>
+        <div id = 'mainbox' class = 'span8 offset3'>
             <div id = 'contentBox' class=''>
                 <img id = 'logo' src="http://beathound.com/bh-icon.png" >
                 <h2 id='logoText'><span id='beat'>Beat</span><span id='hound'>hound</span></h2>
                 <h2 id='splashText'>New releases from the artists you love,straight to your inbox every week.</h2>
                 <span id='uploadNowText'>Upload your iTunes library XML file to find out what you've been missing.</span>
-                <form id='form'>
+                <form id='form' class="row-fluid">
                     <div id='getFile'>Upload your file
                         <button>Choose file</button>
                         No file chosen
                     </div>
                     <input id='emailInput' type="text" placeholder="email my results to...">
-                    <div><button id='analyze'>
-                        <span style="color:#FFFFFF"> Analyze</span></button>
+                    <div><button id='analyze' class = 'btn btn-success'>
+                        Analyze</button>
                     </div>
-                    <span id='helpText'>Need help?</span>
+                    <a id = 'helpText' href=http://google.com>Need help?</a>
                 
                 </form>
             </div>
