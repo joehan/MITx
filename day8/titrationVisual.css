@@ -1,0 +1,16 @@
+.chart{
+    border: 1px solid #ccc;
+    
+        
+}
+
+.pHline{
+    stroke-width:3;
+    stroke:#aaa;
+    opacity:.3;
+}
+
+.y-scale-label{
+    fill:#777;
+    
+    ]

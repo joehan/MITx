@@ -1,0 +1,15 @@
+.chart{
+    border: 1px solid #ccc;
+    
+        
+}
+
+.dateline{
+    stroke:#000;
+    opacity:1;
+}
+
+.y-scale-label{
+    fill:#777;
+    
+    ]
