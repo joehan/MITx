@@ -1,15 +1,14 @@
-.chart{
-    border: 1px solid #ccc;
-    
-        
-}
+.chart {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+  }
 
-.axis{
-    stroke:#000;
-    opacity:1;
-}
+  .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
 
-.y-scale-label{
-    fill:#777;
-    
-    ]
+  .bar {
+    fill: steelblue;
+  }
