@@ -21,29 +21,42 @@
             <div class='row'>
                 <div class='span3 box house'>
                     <div class='row row1'>
-                        <div class='span1 inHouse house1' data-pos=1 data-loc='house'>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item1'>
+                        <div class='span1 inHouse house1' data-pos=1 data-loc='house' data-price=5 data-weight=5 data-on=true> 
+                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item1' onclick=switchSide($(this))>    
                         </div>
-                        <div class='span1 inHouse house2' data-pos=2 data-loc='house'>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item2'>
+                        
+                        <div class='span1 inHouse house2' data-pos=2 data-loc='house' data-price=20 data-weight=25 data-on=true>
+                            
+                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item2' onclick=switchSide($(this))>   
                         </div>
-                        <div class='span1 inHouse house3' data-pos=3 data-loc='house'>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item3'>
+                        
+                        <div class='span1 inHouse house3' data-pos=3 data-loc='house' data-price=200 data-weight=100 data-on=true>
+                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item3' onclick=switchSide($(this))>
                         </div>
+                        
                     </div>
-                        <div class='row row2'>
-                        <div class='span1 inHouse house4' data-pos=4 data-loc='house'>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item4'>
+                    
+                    <div class='row row2'>
+                        <div class='span1 inHouse house4' data-pos=4 data-loc='house' data-price=115 data-weight=60 data-on=true>
+                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item4' onclick=switchSide($(this))>
                             </div>
-                        <div class='span1 inHouse house5' data-pos=5 data-loc='house'>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item5'>
+                            
+                        <div class='span1 inHouse house5' data-pos=5 data-loc='house' data-price=15 data-weight=10 data-on=true>
+                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item5' onclick=switchSide($(this))>
                             </div>
-                        <div class='span1 inHouse house6' data-pos=6 data-loc='house'>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item6'>
+                            
+                        <div class='span1 inHouse house6' data-pos=6 data-loc='house' data-price=40 data-weight=25
+                            data-on=true>
+                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item6' onclick=switchSide($(this))>
                             </div>
                     </div>
                 </div>
             </div>
+            <div class= 'span3 houseValues'>
+                <h2 class='housePrice'></h2>
+                <h2 class='houseWeight'></h2>
+            </div>
+            
         </div>
         <div class='span2'></div>
         <div class='span3'>

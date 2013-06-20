@@ -1,8 +1,9 @@
 .box{
     border:1px solid black;
+    height:230px;
 }
 .inBag{
-    height:50px;
+    height:70px;
     background-color:red;
 }
 .header{
@@ -13,10 +14,10 @@ img{
     height:100%;
 }
 .row1{
-    margin-bottom:10px;
+    margin-bottom:50px;
     
 }
 .inHouse{
-    height:50px;
+    height:70px;
     background-color:blue;
 }
