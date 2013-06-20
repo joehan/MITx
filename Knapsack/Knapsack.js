@@ -1,4 +1,40 @@
+/*
+TODO:
+Make value box update on each movement
+Make a weight limit
+    -change values so that the problem has an answer
+Enforce a weight limit
+    -Make value text red, inform user that they are over limit, suggest they put some stuff back
+Tell user that they are  winnar if they find the correct answer
+New images
+css styling
+
+*/
 var populated= false;
+
+
+var populateValues = (function(div, priceOutput, weightOutput){
+    var totalPrice= 0
+    var totalWeight= 0
+    var children = div.children().children()
+    for(var i=0;i<children.length;i++){
+        var present = $(children[i]).attr('data-on')
+        if (present=='true'){
+            var price = $(children[i]).attr('data-price')
+            var weight = $(children[i]).attr('data-weight')
+            totalPrice+= parseInt(price)
+            totalWeight+=parseInt(weight)
+            if (!populated){
+                $(children[i]).append('$'+price+' '+weight+'lbs');
+            }
+        }
+    }
+    populated=true
+    priceOutput.text('Total Price: $'+totalPrice)
+    weightOutput.text('Total weight:' +totalWeight+'lbs')
+});
+
+
 
 var switchSide = (function (item){
     var pos = item.parent().attr('data-pos')
@@ -26,23 +62,6 @@ var switchSide = (function (item){
     populateValues($('.bag'), $('.bagPrice'), $('.bagWeight'))
 })
 
-var populateValues = (function(div, priceOutput, weightOutput){
-    var totalPrice= 0
-    var totalWeight= 0
-    var children = div.children().children()
-    for(var i=0;i<children.length;i++){
-        var price = $(children[i]).attr('data-price')
-        var weight = $(children[i]).attr('data-weight')
-        totalPrice+= parseInt(price)
-        totalWeight+=parseInt(weight)
-        if (!populated){
-            $(children[i]).append('$'+price+' '+weight+'lbs');
-        }
-    }
-    populated=true
-    priceOutput.text('Total Price: $'+totalPrice)
-    weightOutput.text('Total weight:' +totalWeight+'lbs')
-});
 $(document).ready(function(){  
     populateValues($('.house'), $('.housePrice'), $('.houseWeight'))
 })
