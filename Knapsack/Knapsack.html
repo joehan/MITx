@@ -3,15 +3,14 @@
 <head>
     <title>Knapsack Problem</title>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js'></script>
-    <link href='bootstrap-responsive.css' rel='stylesheet'>
+    <link href='bootstrap.min.css' rel='stylesheet'>
     <script src='bootstrap.js'></script>
     <script src='knapsack.js'></script>
     <link href='knapsack.css' rel='stylesheet'>
 </head>
 
-
 <body>
-    <div class='row'>
+    <div class='row outside'>
         <div class='span2'></div>
         <div class='span3'>
             <div class='row'>
@@ -22,40 +21,38 @@
             <div class='row'>
                 <div class='span3 box house'>
                     <div class='row row1'>
-                        <div class='span1 inHouse house1' data-pos=1 data-loc='house' data-price=5 data-weight=5 data-on=true> 
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item1' onclick=switchSide($(this))>    
+                        <div class='span1 inHouse house1' data-pos=1 data-loc='house' data-price=110 data-weight=100 data-on=true> 
+                            <img src='http://www.furnitureclipart.com/free_furniture_clipart/clip_art_image_of_a_green_chair_0515-0811-1116-0606_SMU.jpg' class='item item1' onclick=switchSide($(this))>    
                         </div>
                         
-                        <div class='span1 inHouse house2' data-pos=2 data-loc='house' data-price=20 data-weight=25 data-on=true>
+                        <div class='span1 inHouse house2' data-pos=2 data-loc='house' data-price=35 data-weight=25 data-on=true>
                             
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item2' onclick=switchSide($(this))>   
+                            <img src='http://cliparts101.com/files/242/C37A840AAA8558420D9FC6228D9101C5/tablelamp.png' class='item item2' onclick=switchSide($(this))>   
                         </div>
                         
-                        <div class='span1 inHouse house3' data-pos=3 data-loc='house' data-price=200 data-weight=100 data-on=true>
+                        <div class='span1 inHouse house3' data-pos=3 data-loc='house' data-price=200 data-weight=200 data-on=true>
                             <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item3' onclick=switchSide($(this))>
                         </div>
                         
                     </div>
                     
                     <div class='row row2'>
-                        <div class='span1 inHouse house4' data-pos=4 data-loc='house' data-price=115 data-weight=60 data-on=true>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item4' onclick=switchSide($(this))>
+                        <div class='span1 inHouse house4' data-pos=4 data-loc='house' data-price=5 data-weight=5 data-on=true>
+                            <img src='http://watoxics.org/healthy-living/healthy-families/safe-start-for-kids-1/cannedfood.jpg/image_thumb' class='item item4' onclick=switchSide($(this))>
                             </div>
                             
-                        <div class='span1 inHouse house5' data-pos=5 data-loc='house' data-price=15 data-weight=10 data-on=true>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item5' onclick=switchSide($(this))>
+                        <div class='span1 inHouse house5' data-pos=5 data-loc='house' data-price=130 data-weight=105 data-on=true>
+                            <img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1CtY0BNMPqvNKzVWp0b_QjabcZyCQOZjudNoDY9nRy452f8H7' class='item item5' onclick=switchSide($(this))>
                             </div>
                             
-                        <div class='span1 inHouse house6' data-pos=6 data-loc='house' data-price=40 data-weight=25
-                            data-on=true>
-                            <img src='http://images.all-free-download.com/images/graphiclarge/glossy_tv_clip_art_10392.jpg' class='item item6' onclick=switchSide($(this))>
+                        <div class='span1 inHouse house6' data-pos=6 data-loc='house' data-price=100 data-weight=70 data-on=true>
+                            <img src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR390TLzbIf-lhVWxQCgwPtRwZR05hVJoM4wklHosx2X03tZ3wX' class='item item6' onclick=switchSide($(this))>
                             </div>
                     </div>
                 </div>
             </div>
-            <div class= 'span3 houseValues'>
-                <h2 class='housePrice'></h2>
-                <h2 class='houseWeight'></h2>
+            <div class= 'span3 houseInstr values'>
+                <h4 class='Instructions'>Instructions: Get as much value into your bag as possible. Be careful, though; your bag can only hold 200 lbs before you would throw your back out trying to carry it! </h4>
             </div>
             
         </div>
@@ -69,19 +66,20 @@
             <div class='row'>
                 <div class='span3 box bag'>
                     <div class='row row1'>
-                        <div class='span1 inBag bag1' data-pos=1 data-loc='bag'></div>
-                        <div class='span1 inBag bag2' data-pos=2 data-loc='bag'></div>
-                        <div class='span1 inBag bag3' data-pos=3 data-loc='bag'></div>
+                        <div class='span1 inBag bag1' data-pos=1 data-loc='bag' data-price=110 data-weight=100 data-on=false></div>
+                        <div class='span1 inBag bag2' data-pos=2 data-loc='bag' data-price=35 data-weight=25 data-on=false></div>
+                        <div class='span1 inBag bag3' data-pos=3 data-loc='bag' data-price=200 data-weight=200 data-on=false></div>
                     </div>
                     <div class='row row2'>
-                        <div class='span1 inBag bag4' data-pos=4 data-loc='bag'></div>
-                        <div class='span1 inBag bag5' data-pos=5 data-loc='bag'></div>
-                        <div class='span1 inBag bag6' data-pos=6 data-loc='bag'></div>
+                        <div class='span1 inBag bag4' data-pos=4 data-loc='bag' data-price=5 data-weight=5 data-on=false></div>
+                        <div class='span1 inBag bag5' data-pos=5 data-loc='bag' data-price=130 data-weight=105 data-on=false></div>
+                        <div class='span1 inBag bag6' data-pos=6 data-loc='bag' data-price=100 data-weight=70 data-on=false></div>
                     </div>
                 </div>
-                <div class= 'span3 houseValues'>
-                    <h2 class='housePrice'></h2>
-                    <h2 class='houseWeight'></h2>
+                <div class= 'span3 bagValues values'>
+                    <h3 class='bagPrice bagValue'></h3>
+                    <h3 class='bagWeight bagValue'></h3>
+                    <h3 class='warning overLimit'></h3>
                 </div>
             </div>
             

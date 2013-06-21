@@ -13,7 +13,11 @@
     
         
 }
-
+body{
+    font-family:Helvetica, Arial, sans-serif;
+    font:14pt;
+        
+}
 .header{
     margin-bottom: 20px;
     height:70px;
@@ -27,8 +31,26 @@ img{
     
 }
 .inHouse{
-     height:70px;
+    height:70px;
     border-radius:3px;
     background-color:#cfd0d2;
     opacity:1;
+}
+
+h3{
+    text-align:center;
+}
+
+.overLimit{
+    color: red;
+}
+
+.notVisible{
+    visibility:hidden;
+}
+.winner{
+    color:limegreen;
+}
+ .bagValue{
+    white-space:nowrap;
 }
