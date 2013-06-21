@@ -1,10 +1,5 @@
 /*
 TODO:
-    -change values so that the problem has an answer
-Enforce a weight limit
-    -Make value text red, inform user that they are over limit, suggest they put some stuff back
-Tell user that they are  winnar if they find the correct answer
-New images
 css styling
 
 */
@@ -16,7 +11,7 @@ var valueList = [{'price':110, 'weight':100}, {'price':35, 'weight':25}, {'price
 var winningPrice= 265;//The win condition. 
 
 
-//populateValues is used to produce the text displaying price and weight underneath each item, and to calculate and display the total weight. It also call helper functions to check if the bag is over the limit and if the problem is solved
+//populateValues is used to produce the text displaying price and weight underneath each item, and to calculate and display the total weight. It also call helper functions limitChecker and winChecker to check if the bag is over the limit and if the problem is solved
 var populateValues = (function(div, priceOutput, weightOutput){
     var totalPrice= 0
     var totalWeight= 0
@@ -43,7 +38,7 @@ var populateValues = (function(div, priceOutput, weightOutput){
 });
 
 
-//switchSide is used to move the contents of 1 placeholder div to the corresponding one on the opposite side. This calls populateValues in order to update the total price and weight left under each box displayed underneath each box
+//switchSide is used to move the contents of 1 placeholder div to the corresponding one on the opposite side. This calls populateValues in order to update the total price and weight left under each box displayed underneath each box.
 var switchSide = (function (item){
     var pos = item.parent().attr('data-pos')
     var loc = item.parent().attr('data-loc')
@@ -68,7 +63,7 @@ var switchSide = (function (item){
     populateValues($('.bag'), $('.bagPrice'), $('.bagWeight'))
 })
 
-//limitChecker checks if the inputted weight is less than the inputted limit. It is used with totalWeight and weightLimit. Depending on the results, it adds and removes classes to modify CSS and change the color and visibility of text.
+//limitChecker checks if the inputted weight is less than the inputted limit. It is used with totalWeight and weightLimit. Depending on the results, it adds and removes classes to modify what CSS applys and therefore change the color and visibility of text. Turns the text red and displays a mesage when over the limit.
 var limitChecker =(function(limit, weight){
     if (weight>limit){
         $('.bagPrice').addClass('overLimit')
@@ -83,7 +78,7 @@ var limitChecker =(function(limit, weight){
     }
     
 })
-
+//winChecker checks if the price is at the winngPrice and the weight is less than or equal to the max weight. Like limitChecker, it adds and removes classes to change what CSS applies and to change the color and content of the text. Turns the text green and displays a congratulatory message when the user wins.
 var winChecker = (function(weight, price, weightLimit, winPrice){
     if ((weight<=weightLimit)&&(price==winPrice)){
         $('.warning').addClass('winner').removeClass('notVisible').text('Congratulations! You win!')
@@ -97,6 +92,7 @@ var winChecker = (function(weight, price, weightLimit, winPrice){
     }
 })
 
+//Calls populate values to display the text on startup
 $(document).ready(function(){  
     populateValues($('.house'), $('.housePrice'), $('.houseWeight'))
     populateValues($('.bag'), $('.bagPrice'),$('.bagWeight'))
